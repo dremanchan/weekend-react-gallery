@@ -1,3 +1,5 @@
+import './GalleryItem.css';
+
 const GalleryItem = ({ photo }) => {
     return(
         <div id="imgBox">

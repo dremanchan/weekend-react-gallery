@@ -1,4 +1,5 @@
 import GalleryItem from '../GalleryItem/GalleryItem';
+import './GalleryList.css';
 
 const GalleryList = ({picList}) => {
     return (
