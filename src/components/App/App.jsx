@@ -40,8 +40,8 @@ function App() {
   }
 
 
-  function clickPhoto() {
-    setPhotoIdClicked(photoID === idClicked ? -1 : photoID);
+  function clickPhoto(photoID) {
+    setPhotoIdClicked(photoID === photoIdClicked ? -1 : photoID);
   }
 
 
@@ -54,6 +54,8 @@ function App() {
      <GalleryList
       picList={picList}
       onLike={onLIke}
+      clickPhoto={clickPhoto}
+      photoIdClicked={photoIdClicked}
       />
     </div>
   );
