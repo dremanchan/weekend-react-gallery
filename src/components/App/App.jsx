@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
+import GalleryList from '../../GalleryList/GalleryList';
 
 function App() {
   const [picList, setPicList] = useState([]);
@@ -15,9 +16,9 @@ function App() {
     console.log("in getPhotos");
 
     axios
-      .get("/gallery")
+      .get('/gallery')
       .then((res) => {
-        setPhotoList(res.data);
+        setPicList(res.data);
       })
       .catch((err) => {
         console.error("GET failed", err);
@@ -29,8 +30,9 @@ function App() {
       <header className="App-header">
         <h1 className="App-title">Gallery of My Life</h1>
       </header>
-      <p>Gallery goes here</p>
-      <img src="images/goat_small.jpg" />
+     <GalleryList
+      picList={picList}
+      />
     </div>
   );
 }
