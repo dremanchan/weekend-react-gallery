@@ -25,6 +25,19 @@ function App() {
       });
   };
 
+  function onLike(photoID){
+    console.log('in like', );
+
+    axios
+      .put(`/gallery/like/${photoID}`)
+      .then((res) => {
+        getPhotos();
+      })
+      .catch((err) => {
+        console.error('LIKE failed');
+      });
+  }
+
   return (
     <div className="App">
       <header className="App-header">
