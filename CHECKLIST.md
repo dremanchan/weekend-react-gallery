@@ -1,6 +1,6 @@
 BASE MODE
 
-- Add images to public/images folder
+- Add images to public/images folder ✅
 - Add these images to the server/modules/data.js
 
 - Create GET request from /gallery and render to app.jsx
