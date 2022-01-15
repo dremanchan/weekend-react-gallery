@@ -10,6 +10,8 @@ const GalleryList = ({picList, onLike}) => {
                         key={index}
                         photo={photo}
                         onLike={onLike}
+                        clickPhoto={clickPhoto}
+                        photoIdClicked={photoIdClicked}
                     />
                 );
             })}
