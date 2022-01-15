@@ -6,7 +6,8 @@ import GalleryList from '../../GalleryList/GalleryList';
 
 function App() {
   const [picList, setPicList] = useState([]);
-
+  const [photoIdClicked, setPhotoIdClicked] = useState(-1);
+  
   useEffect(() => {
     getPhotos();
   }, []);
@@ -38,6 +39,13 @@ function App() {
       });
   }
 
+
+  function clickPhoto() {
+    setPhotoIdClicked(photoID === idClicked ? -1 : photoID);
+  }
+
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -45,6 +53,7 @@ function App() {
       </header>
      <GalleryList
       picList={picList}
+      onLike={onLIke}
       />
     </div>
   );
