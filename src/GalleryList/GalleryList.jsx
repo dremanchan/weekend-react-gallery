@@ -1,7 +1,7 @@
 import GalleryItem from '../GalleryItem/GalleryItem';
 import './GalleryList.css';
 
-const GalleryList = ({picList, onLike}) => {
+const GalleryList = ({picList, onLike, photoIdClicked, clickPhoto}) => {
     return (
         <div id="imgBox">
             {picList.map((photo, index) => {

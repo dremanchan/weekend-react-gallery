@@ -26,7 +26,7 @@ function App() {
       });
   };
 
-  function onLike(photoID){
+  function onLike(photoID) {
     console.log('in like', );
 
     axios
@@ -53,7 +53,7 @@ function App() {
       </header>
      <GalleryList
       picList={picList}
-      onLike={onLIke}
+      onLike={onLike}
       clickPhoto={clickPhoto}
       photoIdClicked={photoIdClicked}
       />
