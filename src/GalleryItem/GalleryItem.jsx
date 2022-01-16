@@ -23,7 +23,7 @@ const GalleryItem = ({ photo, clickPhoto, onLike, photoIdClicked }) => {
         }}
         className="likeBtn"
       >
-        Like {photo.likes}
+        Likes: {photo.likes}
       </button>
     </div>
   );

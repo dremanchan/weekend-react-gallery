@@ -2,22 +2,20 @@ import React from "react";
 import { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
-import GalleryList from '../../GalleryList/GalleryList';
+import GalleryList from "../../GalleryList/GalleryList";
 
 function App() {
   const [picList, setPicList] = useState([]);
   const [photoIdClicked, setPhotoIdClicked] = useState(-1);
-  
+
   useEffect(() => {
     getPhotos();
   }, []);
 
   // get request
   const getPhotos = () => {
-    console.log("in getPhotos");
-
     axios
-      .get('/gallery')
+      .get("/gallery")
       .then((res) => {
         setPicList(res.data);
       })
@@ -27,35 +25,30 @@ function App() {
   };
 
   function onLike(photoID) {
-    console.log('in like', );
-
     axios
       .put(`/gallery/like/${photoID}`)
       .then((res) => {
         getPhotos();
       })
       .catch((err) => {
-        console.error('LIKE failed');
+        console.error("LIKE failed");
       });
   }
-
 
   function clickPhoto(photoID) {
     setPhotoIdClicked(photoID === photoIdClicked ? -1 : photoID);
   }
-
-
 
   return (
     <div className="App">
       <header className="App-header">
         <h1 className="App-title">Gallery of My Life</h1>
       </header>
-     <GalleryList
-      picList={picList}
-      onLike={onLike}
-      clickPhoto={clickPhoto}
-      photoIdClicked={photoIdClicked}
+      <GalleryList
+        picList={picList}
+        onLike={onLike}
+        clickPhoto={clickPhoto}
+        photoIdClicked={photoIdClicked}
       />
     </div>
   );
